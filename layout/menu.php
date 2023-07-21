@@ -21,6 +21,8 @@
     <link href="http://localhost/proyectogrupal/styles/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="http://localhost/proyectogrupal/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 
@@ -37,7 +39,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/proyectogrupal/">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fa-solid fa-graduation-cap"></i>
+                    <i class="bi bi-mortarboard-fill"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">EduSearch</div>
             </a>
@@ -48,7 +50,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="http://localhost/proyectogrupal/">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Inicio</span></a>
             </li>
 
@@ -60,7 +62,42 @@
                 Usuario
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/proyectogrupal/views/universidades/index.php">
+                    <i class="bi bi-buildings"></i>
+                    <span>Mostrar Universidades</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/proyectogrupal/views/carreras/index.php">
+                    <i class="bi bi-book-fill"></i>
+                    <span>Mostrar Carreras</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/proyectogrupal/views/temario/index.php">
+                    <i class="bi bi-archive-fill"></i>
+                    <span>Mostrar Temario</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/proyectogrupal/views/apoyos/index.php">
+                    <i class="bi bi-cash-coin"></i>
+                    <span>Apoyos</span></a>
+            </li>
+                          
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/proyectogrupal/views/contacto/index.php">
+                    <i class="bi bi-map"></i>
+                    <span>Ubicaciones</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="sidebar-heading">
+                Administrador
+            </div>
+            <!-- 1 -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -75,22 +112,68 @@
                     </div>
                 </div>
             </li>
-            <!-- Nav Item - Charts -->
+            <!-- 2 -->
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/proyectogrupal/views/contacto/index.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Ubicaciones</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fa fa-building-o"></i>
+                    <span>Carreras</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+        
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/carreras/index.php">Mostrar</a>
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/carreras/add.php">Insertar</a>
+                    </div>
+                </div>
             </li>
-
-            <!-- Nav Item - Tables -->
+            <!-- 3 -->
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/proyectogrupal/views/apoyos/index.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Apoyos</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
+                    <i class="fa fa-building-o"></i>
+                    <span>Temario</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+        
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/temario/index.php">Mostrar</a>
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/temario/add.php">Insertar</a>
+                    </div>
+                </div>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <!-- 4 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
+                    aria-expanded="true" aria-controls="collapseFive">
+                    <i class="fa fa-building-o"></i>
+                    <span>Apoyo</span>
+                </a>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+        
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/apoyos/index.php">Mostrar</a>
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/apoyos/add.php">Insertar</a>
+                    </div>
+                </div>
+            </li>
+            <!-- 5 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix"
+                    aria-expanded="true" aria-controls="collapseSix">
+                    <i class="fa fa-building-o"></i>
+                    <span>Usuario</span>
+                </a>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+        
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/usuarios/index.php">Mostrar</a>
+                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/usuarios/add.php">Insertar</a>
+                    </div>
+                </div>
+            </li>
+            <!-- FIN -->
+            <hr class="sidebar-divider my-0">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

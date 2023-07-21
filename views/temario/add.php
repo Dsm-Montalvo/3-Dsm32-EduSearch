@@ -3,7 +3,7 @@ include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 ?>
 
-<h1> &nbsp; &nbsp; Formulario insertar Usuarios</h1>
+<h1> &nbsp; &nbsp; Formulario insertar temario</h1>
         <p>&nbsp; &nbsp; Ingresa tu nombre:</p>
         <input type="text" class="form-control" placeholder="Ingresa tu nombre">
         <p> &nbsp; &nbsp; Ingresa tu email</p>

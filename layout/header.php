@@ -201,9 +201,3 @@
 
         </nav>
         <!-- End of Topbar -->
-
-        <?php
-                include("layout/container.php");
-                ?>
-    </div>
-    <!-- End of Main Content -->

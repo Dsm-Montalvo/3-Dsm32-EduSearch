@@ -11,7 +11,7 @@ include ('./../../layout/header.php');
 	</main>
 
 </div>
-<!-- </div> --> 
+<!-- </div> -->
 <?php
 include ('./../../layout/footer.php');
 ?>

@@ -1,3 +1,6 @@
+<?php $url_base="http://localhost/proyectogrupal/"; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,31 +66,31 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/proyectogrupal/views/universidades/index.php">
+                <a class="nav-link" href="<?php echo $url_base;?>views/universidades/index.php">
                     <i class="bi bi-buildings"></i>
                     <span>Mostrar Universidades</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/proyectogrupal/views/carreras/index.php">
+                <a class="nav-link" href="<?php echo $url_base;?>views/carreras/index.php">
                     <i class="bi bi-book-fill"></i>
                     <span>Mostrar Carreras</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/proyectogrupal/views/temario/index.php">
+                <a class="nav-link" href="<?php echo $url_base;?>views/temario/index.php">
                     <i class="bi bi-archive-fill"></i>
                     <span>Mostrar Temario</span></a>
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/proyectogrupal/views/apoyos/index.php">
+                <a class="nav-link" href="<?php echo $url_base;?>views/apoyos/index.php">
                     <i class="bi bi-cash-coin"></i>
                     <span>Apoyos</span></a>
             </li>
                           
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/proyectogrupal/views/contacto/index.php">
+                <a class="nav-link" href="<?php echo $url_base;?>views/contacto/index.php">
                     <i class="bi bi-map"></i>
                     <span>Ubicaciones</span></a>
             </li>
@@ -107,8 +110,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
         
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/universidades/index.php">Mostrar</a>
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/universidades/add.php">Insertar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/universidades/index.php">Mostrar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/universidades/add.php">Insertar</a>
                     </div>
                 </div>
             </li>
@@ -122,8 +125,8 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
         
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/carreras/index.php">Mostrar</a>
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/carreras/add.php">Insertar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/carreras/index.php">Mostrar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/carreras/add.php">Insertar</a>
                     </div>
                 </div>
             </li>
@@ -137,8 +140,8 @@
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
         
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/temario/index.php">Mostrar</a>
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/temario/add.php">Insertar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/temario/index.php">Mostrar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/temario/add.php">Insertar</a>
                     </div>
                 </div>
             </li>
@@ -152,8 +155,8 @@
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
         
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/apoyos/index.php">Mostrar</a>
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/apoyos/add.php">Insertar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/apoyos/index.php">Mostrar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/apoyos/add.php">Insertar</a>
                     </div>
                 </div>
             </li>
@@ -167,8 +170,8 @@
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
         
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/usuarios/index.php">Mostrar</a>
-                        <a class="collapse-item" href="http://localhost/proyectogrupal/views/usuarios/add.php">Insertar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/usuarios/index.php">Mostrar</a>
+                        <a class="collapse-item" href="<?php echo $url_base;?>views/usuarios/add.php">Insertar</a>
                     </div>
                 </div>
             </li>
@@ -186,4 +189,4 @@
             </div>
 
         </ul>
-        <!-- End of Sidebar -->
+        <!-- End of Sidebar --> 

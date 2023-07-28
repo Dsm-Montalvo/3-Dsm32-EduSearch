@@ -2,7 +2,7 @@
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 ?>
-
+        
 <h1> &nbsp; &nbsp; Formulario insertar temario</h1>
         <p>&nbsp; &nbsp; Ingresa tu nombre:</p>
         <input type="text" class="form-control" placeholder="Ingresa tu nombre">
@@ -32,7 +32,8 @@ include ('./../../layout/header.php');
         <input type="submit" class="btn btn-success" value="Enviar Informacion">
         <br>
         <button type="button" class="btn btn-warning">Cancelar</button>
-        <br>
+        <br> 
+
 
 <?php
 include ('./../../layout/footer.php');

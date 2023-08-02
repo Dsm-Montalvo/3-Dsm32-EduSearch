@@ -41,8 +41,9 @@ header("location:index.php");
                                 <td scope="row"><?php echo $temarios['Id_Temario']; ?> </td>
                                 <td><?php echo $temarios['Nom_Temario']; ?></td>
                                 <td><?php echo $temarios['Id_Carrera1']; ?></td>
-                                <td><a href="" class="btn btn-warning">Editar</a>
-                                <a href="index.php?id=<?php echo $temarios['Id_Temario']; ?>" class="btn btn-danger">Eliminar</a></td>
+                                <td><a href="" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
+                                <a href="" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                <a href="index.php?id=<?php echo $temarios['Id_Temario']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                         </tr>
                     <?php ?>
                     <?php foreach($temario as $temarios) ?>
@@ -50,8 +51,9 @@ header("location:index.php");
                                 <td scope="row"><?php echo $temarios['Id_Temario']; ?> </td>
                                 <td><?php echo $temarios['Nom_Temario']; ?></td>
                                 <td><?php echo $temarios['Id_Carrera1']; ?></td>
-                                <td><a href="" class="btn btn-warning">Editar</a>
-                                <a href="index.php?id=<?php echo $temarios['Id_Temario']; ?>" class="btn btn-danger">Eliminar</a></td>
+                                <td><a href="" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
+                                <a href="" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                <a href="index.php?id=<?php echo $temarios['Id_Temario']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                         </tr>
                     <?php ?>
                     <?php foreach($temario as $temarios) ?>
@@ -59,8 +61,9 @@ header("location:index.php");
                                 <td scope="row"><?php echo $temarios['Id_Temario']; ?> </td>
                                 <td><?php echo $temarios['Nom_Temario']; ?></td>
                                 <td><?php echo $temarios['Id_Carrera1']; ?></td>
-                                <td><a href="" class="btn btn-warning">Editar</a>
-                                <a href="index.php?id=<?php echo $temarios['Id_Temario']; ?>" class="btn btn-danger">Eliminar</a></td>
+                                <<td><a href="" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
+                                <a href="" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                <a href="index.php?id=<?php echo $temarios['Id_Temario']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                         </tr>
                     <?php ?>
                 </tbody>

@@ -1,5 +1,6 @@
 <!-- importar layout de header y menu -->
 <?php
+include ('test.php');
 include ("layout/menu.php");
 include ("layout/header.php");
 ?>

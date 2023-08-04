@@ -1,7 +1,9 @@
 
 <?php
+include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+/* include ('./../../test.php'); */
 ?>
 
 <main class="content">
@@ -11,7 +13,7 @@ include ('./../../layout/header.php');
 	</main>
 
 </div>
-</div>
+<!-- </div> -->
 <?php
 include ('./../../layout/footer.php');
 ?>

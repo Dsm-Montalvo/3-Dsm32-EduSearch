@@ -2,6 +2,12 @@
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+include ('./../../database/conexion.php');
+
+$sql = "SELECT * FROM apoyos WHERE Id_Apoyo=".$_REQUEST['Id'];
+$resultado = $conexion->query($sql);
+
+$row = $resultado->fetch_assoc();
 ?>
 
 
@@ -26,24 +32,25 @@ include ('./../../layout/header.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="" method="post">
+        <form action="../../app/models/editar_apoyo.php" method="post">
         <div class="card-body">
+        <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Apoyo']; ?>">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre del apoyo:</label>
-                    <input class="form-control" type="text" name="nombre" id="">
+                    <input class="form-control" type="text" name="nombrea" value="<?php echo $row['Nom_Apoyo']?>">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">tipo de apoyo:</label>
-                <input class="form-control" type="text" name="tipo" id="">
+                <input class="form-control" type="text" name="tipoa" value="<?php echo $row['Tipo_Apoyo']?>">
                 
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Monto del apoyo:</label>
-                    <input class="form-control" type="text" name="monto" id="">
+                    <input class="form-control" type="text" name="montoa" value="<?php echo $row['Monto_Apoyo']?>">
                 </div>
                 
             </div>

@@ -2,6 +2,12 @@
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+include ('./../../database/conexion.php');
+
+$sql = "SELECT * FROM carrera WHERE Id_Carrera=".$_REQUEST['Id'];
+$resultado = $conexion->query($sql);
+
+$row = $resultado->fetch_assoc();
 ?>
 
 <div class="container-fluid">
@@ -25,29 +31,30 @@ include ('./../../layout/header.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="" method="post">
+        <form action="../../app/models/editar_carreras.php" method="post">
         <div class="card-body">
+        <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Carrera']; ?>">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre de la Carrera:</label>
-                    <input class="form-control" type="text" name="nombre_carrera" id="">
+                    <input class="form-control" type="text" name="nombrec" value="<?php echo $row['Nom_Carrera']?>">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">Duracion:</label>
-                <input class="form-control" type="text" name="duracion" id="">
+                <input class="form-control" type="text" name="duracionc" value="<?php echo $row['Duracion']?>">
                 
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Tipo:</label>
-                    <input class="form-control" type="text" name="tipo" id="">
+                    <input class="form-control" type="text" name="tipoc" value="<?php echo $row['Tipo']?>">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">Colegiatura:</label>
-                <input class="form-control" type="text" name="colegiatura" id="">
+                <input class="form-control" type="text" name="colegiaturac" value="<?php echo $row['Colegiatura']?>">
                 </div>
             </div>
                     <br>

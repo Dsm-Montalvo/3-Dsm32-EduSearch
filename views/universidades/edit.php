@@ -2,6 +2,12 @@
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+include ('./../../database/conexion.php');
+
+$sql = "SELECT * FROM universidades WHERE Id_Universidad=".$_REQUEST['id'];
+$resultado = $conexion->query($sql);
+
+$row = $resultado->fetch_assoc();
 ?>
 
 
@@ -26,37 +32,62 @@ include ('./../../layout/header.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="" method="post">
+        <form action="../../app/models/editar_universidades.php" method="post">
         <div class="card-body">
+        <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Universidad']; ?>">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre de la Universidad:</label>
-                    <input class="form-control" type="text" name="nombre" id="">
+                    <input class="form-control" type="text" name="nombreu" value="<?php echo $row['Nom_Universidad']?>">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">Modalidad:</label>
-                <input class="form-control" type="text" name="modalidad" id="">
+                <input class="form-control" type="text" name="modalidadu" value="<?php echo $row['Modalidad']?>">
                 
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
-                    <label class="form-label" for="">Tipo de Universidad:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Municipio:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
-                    </select>
+                        <label class="form-label" for="">Tipo de Universidad:</label>
+                        <select class="form-select" name="tipou">
+                                    <option value="">--Selecciona Tipo--</option>
+                                <?php 
+                                    $sql5 = "SELECT * FROM tipo_universidad WHERE Id_Tipo=".$row['Tipo_universidad1'];
+                                    $resultado3 = $conexion->query($sql5);
+
+                                    $row4 = $resultado3->fetch_assoc();
+
+                                    echo "<option selected value='".$row4['Id_Tipo']."'>".$row4['Tipo_Nombre']."</option>";
+
+                                    $sql6 = "SELECT * FROM tipo_universidad";
+                                    $resultado5 = $conexion->query($sql6);
+                                    
+                                    while($Fila3 = $resultado5->fetch_array()){
+                                        echo "<option value='".$Fila3['Id_Tipo']."'>".$Fila3['Tipo_Nombre']."</option>";
+                                    }
+                                ?>
+                        </select> 
                 </div>
                 <div class="col-6">
                     <label class="form-label" for="">Id Estado:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Estado:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <select class="form-select" name="estadou">
+                            <option value="">--Selecciona Estado--</option>
+                            <?php 
+                                $sql1 = "SELECT * FROM estados WHERE Id_Estado=".$row['Id_Estado1'];
+                                $resultado1 = $conexion->query($sql1);
+
+                                $row1 = $resultado1->fetch_assoc();
+
+                                echo "<option selected value='".$row1['Id_Estado']."'>".$row1['Nom_Estado']."</option>";
+
+                                $sql2 = "SELECT * FROM estados";
+                                $resultado2 = $conexion->query($sql2);
+                                
+                                while($Fila = $resultado2->fetch_array()){
+                                    echo "<option value='".$Fila['Id_Estado']."'>".$Fila['Nom_Estado']."</option>";
+                                }
+                            ?>
                     </select>
                 </div>
                
@@ -64,11 +95,23 @@ include ('./../../layout/header.php');
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Id Municipio:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Municipio:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <select class="form-select" name="municipiou">
+                            <option value="">--Selecciona Municipio--</option>
+                            <?php 
+                                $sql3 = "SELECT * FROM municipios WHERE Id_Municipio=".$row['Id_Municipio1'];
+                                $resultado2 = $conexion->query($sql3);
+
+                                $row3 = $resultado2->fetch_assoc();
+
+                                echo "<option selected value='".$row3['Id_Municipio']."'>".$row3['Nom_Municipio']."</option>";
+
+                                $sql4 = "SELECT * FROM municipios";
+                                $resultado4 = $conexion->query($sql4);
+                                
+                                while($Fila2 = $resultado4->fetch_array()){
+                                    echo "<option value='".$Fila2['Id_Municipio']."'>".$Fila2['Nom_Municipio']."</option>";
+                                }
+                            ?>
                     </select>
                 </div>
                 

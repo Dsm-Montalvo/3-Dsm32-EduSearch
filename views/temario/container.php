@@ -35,9 +35,9 @@ INNER JOIN carrera ON temarios.Id_Carrera1 =carrera.Id_Carrera
                                         <td scope="row"><?php echo $resultado['Id_Temario']; ?> </td>
                                         <td><?php echo $resultado['Nom_Temario']; ?></td>
                                         <td><?php echo $resultado['Nom_Carrera']; ?></td>
-                                        <td><a href="<?=$h->get['base_url'].'/views/temario/edit.php'?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
+                                        <td><a href="<?=$h->get['base_url'].'/views/temario/edit.php?Id='?><?php echo $resultado['Id_Temario'] ?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
                                         <a href="<?=$h->get['base_url'].'/views/temario/show.php'?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
-                                        <a href="index.php?id=<?php echo $resultado['Id_Temario']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
+                                        <a href="<?=$h->get['base_url'].'/app/models/eliminar_temario.php?Id='?><?php echo $resultado['Id_Temario'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                                 </tr>
                         <?php }?>
                     

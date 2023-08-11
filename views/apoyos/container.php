@@ -35,9 +35,9 @@ $sql = $conexion -> query("SELECT * FROM apoyos");
                                 <td><?php echo $resultado['Nom_Apoyo']; ?></td>
                                 <td><?php echo $resultado['Tipo_Apoyo']; ?></td>
                                 <td><?php echo $resultado['Monto_Apoyo']; ?></td>
-                                <td><a href="<?=$h->get['base_url'].'/views/apoyos/edit.php'?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
+                                <td><a href="<?=$h->get['base_url'].'/views/apoyos/edit.php?Id='?><?php echo $resultado['Id_Apoyo'] ?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
                                 <a href="<?=$h->get['base_url'].'/views/apoyos/show.php'?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
-                                <a href="index.php?id=<?php echo $resultado['Id_Apoyo']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
+                                <a href="<?=$h->get['base_url'].'/app/models/eliminar_apoyo.php?Id='?><?php echo $resultado['Id_Apoyo'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                         </tr>
                     <?php }?>
                     

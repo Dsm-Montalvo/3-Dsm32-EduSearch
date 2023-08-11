@@ -2,6 +2,7 @@
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+include ('./../../database/conexion.php');
 ?>
 
  <div class="container-fluid">
@@ -25,73 +26,88 @@ include ('./../../layout/header.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="" method="post">
+        <form action="../../app/models/insertar_usuario.php" method="POST">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre:</label>
-                    <input class="form-control" type="text" name="nombre" id="">
+                    <input class="form-control" type="text" name="nombreu" id="">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">Apellido Paterno:</label>
-                <input class="form-control" type="text" name="ap_paterno" id="">
+                <input class="form-control" type="text" name="ap_paternou" id="">
                 
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Apellido_Materno:</label>
-                    <input class="form-control" type="text" name="ap_materno" id="">
+                    <input class="form-control" type="text" name="ap_maternou" id="">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">Fecha de Nacimiento:</label>
-                <input class="form-control" type="date">
+                <input class="form-control" type="date" name="fechau">
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Email:</label>
-                    <input class="form-control" type="email" name="correo" id="">
+                    <input class="form-control" type="email" name="correou" id="">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">Contraseña:</label>
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" name="contraseñau">
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Foto de Perfil:</label>
-                    <input class="form-control" type="file" name="foto" id="">
+                    <input class="form-control" type="file" name="fotou" id="">
                 </div>
                 
                 <div class="col-6">
-                    <label class="form-label" for="">Id Estado:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Estado:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <label class="form-label" for="">Estado:</label>
+                    <select class="form-select" name="estadou">
+                            <option selected disabled>--Selecciona Estado--</option>
+                            <?php 
+                                $sql = $conexion->query("SELECT * FROM estados");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Estado']."'>" .$resultado
+                                    ['Nom_Estado']."</option>";
+                                }
+                            
+                            ?>
                     </select>
                 </div>
                 <div class="col-6">
-                    <label class="form-label" for="">Id Municipio:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Municipio:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <label class="form-label" for="">Municipio:</label>
+                    <select class="form-select" name="municipiou">
+                            <option selected disabled>--Selecciona Municipio--</option>
+                            <?php 
+                                $sql = $conexion->query("SELECT * FROM municipios");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Municipio']."'>" .$resultado
+                                    ['Nom_Municipio']."</option>";
+                                }
+                            
+                            ?>
                     </select>
                 </div>
                 <div class="col-6">
-                    <label class="form-label" for="">Id Cargo:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Cargo:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <label class="form-label" for="">Cargo:</label>
+                    <select class="form-select" name="cargou">
+                            <option selected disabled>--Selecciona cargo--</option>
+                            <?php 
+                                $sql = $conexion->query("SELECT * FROM cargos");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Cargo']."'>" .$resultado
+                                    ['descripcion']."</option>";
+                                }
+                            
+                            ?>
                     </select>
                 </div>
             </div>

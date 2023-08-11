@@ -14,7 +14,7 @@ INNER JOIN carrera ON temarios.Id_Carrera1 =carrera.Id_Carrera
     
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Temarios</h1>
-                <a href="add.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <a href="add.php" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                 <i class="fas fa-plus fa-sm text-white-50"></i></a>
     </div>
     
@@ -24,7 +24,7 @@ INNER JOIN carrera ON temarios.Id_Carrera1 =carrera.Id_Carrera
                         <tr>
                                 <th scope="col">Id del Temario</th>
                                 <th scope="col">Nombre del Temario</th>
-                                <th scope="col">Id de la Carrera</th>
+                                <th scope="col">Carrera</th>
                                 <th scope="col">Acciones</th>
                         </tr>
                 </thead>

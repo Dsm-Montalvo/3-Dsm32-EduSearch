@@ -2,6 +2,7 @@
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+include ('./../../database/conexion.php');
 ?>
 
 <div class="container-fluid">
@@ -25,24 +26,24 @@ include ('./../../layout/header.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="" method="post">
+        <form action="../../app/models/Insertar_apoyo.php" method="POST">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre del apoyo:</label>
-                    <input class="form-control" type="text" name="nombre" id="">
+                    <input class="form-control" type="text" name="nombrea" id="">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">tipo de apoyo:</label>
-                <input class="form-control" type="text" name="tipo" id="">
+                <input class="form-control" type="text" name="tipoa" id="">
                 
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Monto del apoyo:</label>
-                    <input class="form-control" type="text" name="monto" id="">
+                    <input class="form-control" type="text" name="montoa" id="">
                 </div>
                 
             </div>

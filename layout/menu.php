@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" href="<?=$h->get['base_url'].'/styles/img/icon-48x48.png'?>" />
 
     <title>EduSearch</title>
 
@@ -74,7 +75,7 @@
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/proyectogrupal/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=$h->get['base_url'].'/'?>">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="bi bi-mortarboard-fill"></i>
                 </div>

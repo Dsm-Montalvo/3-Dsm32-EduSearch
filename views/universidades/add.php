@@ -2,6 +2,7 @@
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+include ('./../../database/conexion.php');
 ?>
 
 <div class="container-fluid">
@@ -25,49 +26,63 @@ include ('./../../layout/header.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="" method="post">
+        <form action="../../app/models/insertar_universidad.php" method="POST">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre de la Universidad:</label>
-                    <input class="form-control" type="text" name="nombre" id="">
+                    <input class="form-control" type="text" name="nombreu" id="">
                 </div>
                 
                 <div class="col-6">
                 <label class="form-label" for="">Modalidad:</label>
-                <input class="form-control" type="text" name="modalidad" id="">
+                <input class="form-control" type="text" name="modalidadu" id="">
                 
                 </div>
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
-                    <label class="form-label" for="">Tipo de Universidad:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Municipio:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <label class="form-label" for="">Tipo</label>
+                    <select class="form-select" name="tipou">
+                            <option selected disabled>--Tipo--</option>
+                            <?php 
+                                $sql = $conexion->query("SELECT * FROM tipo_universidad");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Tipo']."'>" .$resultado
+                                    ['Tipo_Nombre']."</option>";
+                                }
+                            
+                            ?>
                     </select>
                 </div>
                 <div class="col-6">
-                    <label class="form-label" for="">Id Estado:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Estado:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <label class="form-label" for="">Estado:</label>
+                    <select class="form-select" name="estadou">
+                            <option selected disabled>--Selecciona Estado--</option>
+                            <?php 
+                                $sql = $conexion->query("SELECT * FROM estados");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Estado']."'>" .$resultado
+                                    ['Nom_Estado']."</option>";
+                                }
+                            
+                            ?>
                     </select>
                 </div>
                
             </div>
             <div class="row mb-2"> 
                 <div class="col-6">
-                    <label class="form-label" for="">Id Municipio:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Municipio:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <label class="form-label" for="">Municipio:</label>
+                    <select class="form-select" name="municipiou">
+                        <?php 
+                                $sql = $conexion->query("SELECT * FROM municipios");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Municipio']."'>" .$resultado
+                                    ['Nom_Municipio']."</option>";
+                                }
+                            
+                        ?>
                     </select>
                 </div>
                 

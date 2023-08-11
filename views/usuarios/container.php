@@ -13,7 +13,7 @@ INNER JOIN cargos ON usuarios.Id_cargo1 =cargos.Id_Cargo
    
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Usuarios</h1>
-        <a href="add.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <a href="add.php" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
             <i class="fas fa-plus fa-sm text-white-50"></i></a>
     </div>
     
@@ -46,10 +46,10 @@ INNER JOIN cargos ON usuarios.Id_cargo1 =cargos.Id_Cargo
                                 <td><?php echo $resultado['Email']; ?></td>
                                 <td><?php echo $resultado['Contraseña']; ?></td>
                                 <td><?php echo $resultado['Foto_perfil']; ?></td>
-                                <td class="col-2"><?php echo $resultado['Nom_Estado']; ?></td>
+                                <td><?php echo $resultado['Nom_Estado']; ?></td>
                                 <td><?php echo $resultado['Nom_Municipio']; ?></td>
                                 <td><?php echo $resultado['descripcion']; ?></td>
-                                <td class="col-4"><a href="<?=$h->get['base_url'].'/views/usuarios/edit.php'?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
+                                <td class="col-6"><a href="<?=$h->get['base_url'].'/views/usuarios/edit.php'?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
                                 <a href="<?=$h->get['base_url'].'/views/usuarios/show.php'?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
                                 <a href="index.php?id=<?php echo $resultado['Id_Usuario']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                         </tr>

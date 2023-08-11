@@ -2,6 +2,7 @@
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
+include ('./../../database/conexion.php');
 ?>
 
 <div class="container-fluid">
@@ -25,20 +26,25 @@ include ('./../../layout/header.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="" method="post">
+        <form action="../../app/models/insertar_temario.php" method="post">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre del Temario:</label>
-                    <input class="form-control" type="text" name="nombre" id="">
+                    <input class="form-control" type="text" name="nombret" id="">
                 </div>
                 <div class="col-6">
                     <label class="form-label" for="">Carrera:</label>
-                    <select class="form-select" aria-label="Default select example">
-                            <option value="">Selecciona Estado:</option>
-                            <option value="">tienda1</option>
-                            <option value="">tienda2</option>
-                            <option value="">tienda3</option>
+                    <select class="form-select" name="carrerat">
+                    <option selected disabled>--Carrera--</option>
+                            <?php 
+                                $sql = $conexion->query("SELECT * FROM carrera");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Carrera']."'>" .$resultado
+                                    ['Nom_Carrera']."</option>";
+                                }
+                            
+                            ?>
                     </select>
                 </div>
             </div>

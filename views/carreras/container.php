@@ -1,78 +1,20 @@
-<!-- 
-<div class="container-fluid p-0">
-    <h1 class="h3 mb-3"><strong>Proyecto Integrador</strong> Carreras</h1>
-    <h2>Muestra de los datos de la tabla de SQL</h2>
-    <div class="table-responsive">
-       
-        <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">Id_Universidad</th>
-            <th scope="col">Nombre_universidad</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Modalidad</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Universidad Privada XY</td>
-            <td>Privada</td>
-            <td>Presencial</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Universidad Tecnologica</td>
-            <td>Publica</td>
-            <td>Vitual</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Universidad ABC</td>
-            <td>Privada</td>
-            <td>Semi-Presencial</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>Universidad Autonoma</td>
-            <td>Publica</td>
-            <td>Presencial</td>
-        </tr>
-        <tr>
-            <th scope="row">5</th>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">6</th>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">7</th>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </tbody>
-            
-    </table>
-    </div>
-</div> -->
+<?php 
+include ('./../../database/conexion.php');
 
+$sql = $conexion -> query("SELECT * FROM carrera");
+
+?>
 <div class="container">
+    
 			<div class="row" style="padding: 10px">
 				<h3 class="text-center">CRUD imagenes y archivo de PHP y MySQL</h3>
 			</div>
 			
-			<div class="row">
-				<a href="nuevo.php" class="btn btn-primary">Nuevo Registro</a>
-			</div>
-			
-			<br>
-			
+			<div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Carreras </h1>
+                <a href="add.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i></a>
+            </div>
 			<div class="table-responsive-sm">
 				<table class="display table table-bordered" id="mitabla">
 					<thead>
@@ -82,13 +24,26 @@
 							<th>Duracion</th>
 							<th>Tipo</th>
                             <th>Colegiatura</th>
-							<th></th>
-							<th></th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 					
 					<tbody>
-						
+                        <?php while($resultado = $sql -> fetch_assoc()){
+                        ?>
+                         <tr>
+							<td scope="row"><?php echo $resultado['Id_Carrera']?></td>
+							<td><?php echo $resultado['Nom_Carrera']?></td>
+							<td><?php echo $resultado['Duracion']?></td>
+							<td><?php echo $resultado['Tipo']?></td>
+                            <td><?php echo $resultado['Colegiatura']?></td>
+							<td><a href="<?=$h->get['base_url'].'/views/carreras/edit.php'?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
+                                <a href="<?=$h->get['base_url'].'/views/carreras/show.php'?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                <a href="index.php?id=<?php echo $resultado['Id_Carrera']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
+						</tr>
+                        <?php 
+                        } 
+                        ?>
 					</tbody>
 				</table>
 			</div>

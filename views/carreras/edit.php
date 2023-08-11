@@ -1,62 +1,77 @@
+<?php
+include ('./../../test.php');
+include ('./../../layout/menu.php');
+include ('./../../layout/header.php');
+?>
 
-<div class="container">
-			<div class="row" style="padding: 10px">
-				<h3 class="text-center">Editar Registros</h3>
-			</div>
-			
-			<div class="row">
-				<a href="nuevo.php" class="btn btn-primary">Nuevo Registro</a>
-			</div>
-			
-			<br>
-			
-			<div class="table-responsive-sm">
-				<table class="display table table-bordered" id="mitabla">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Nombre</th>
-							<th>Duracion</th>
-							<th>Tipo</th>
-                            <th>Colegiatura</th>
-							<th></th>
-							<th></th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						
-					</tbody>
-				</table>
-			</div>
-		</div>
-		
-		<!-- Modal -->		
-		<div class="modal fade" id="confirm-delete" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="staticBackdropLabel">Eliminar Registro</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						¿Desea eliminar este registro?
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<a class="btn btn-danger btn-ok">Eliminar</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<script>
-			$('#confirm-delete').on('show.bs.modal', function(e) {
-				$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-				
-				$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-			});
-		</script>	
-		
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Editar Carrera</h6>
+            <div class="dropdown no-arrow">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                    aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-header">Dropdown Header:</div>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card Body -->
+        <form action="" method="post">
+        <div class="card-body">
+            <div class="row mb-2"> 
+                <div class="col-6">
+                    <label class="form-label" for="">Nombre de la Carrera:</label>
+                    <input class="form-control" type="text" name="nombre_carrera" id="">
+                </div>
+                
+                <div class="col-6">
+                <label class="form-label" for="">Duracion:</label>
+                <input class="form-control" type="text" name="duracion" id="">
+                
+                </div>
+            </div>
+            <div class="row mb-2"> 
+                <div class="col-6">
+                    <label class="form-label" for="">Tipo:</label>
+                    <input class="form-control" type="text" name="tipo" id="">
+                </div>
+                
+                <div class="col-6">
+                <label class="form-label" for="">Colegiatura:</label>
+                <input class="form-control" type="text" name="colegiatura" id="">
+                </div>
+            </div>
+                    <br>
+                    <br>
+                        <div class="col-4">
+                        <button class="btn btn-success" type="submit">Guardar</button>
+
+            </div>
+        </div>
+        </form> 
+
+    </div>
+    <!-- Page Heading -->
+
+
+
+
+
+
+
+
+</div>
+</div>
+<?php
+include ('./../../layout/footer.php');
+?>
+

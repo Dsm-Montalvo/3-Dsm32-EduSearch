@@ -3,6 +3,7 @@ include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 ?>
+
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
@@ -10,7 +11,7 @@ include ('./../../layout/header.php');
             <h6 class="m-0 font-weight-bold text-primary">Alta Universidades</h6>
             <div class="dropdown no-arrow">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                    aria-haspopup="true" aria-expanded="false">#
                     <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
@@ -26,40 +27,57 @@ include ('./../../layout/header.php');
         <!-- Card Body -->
         <form action="" method="post">
         <div class="card-body">
-            
-            <div class="row mb-3"> 
-                <div class="col-4">
-                    <label class="form-label" for="">Nombre:</label>
-                    <input class="form-control" type="text" name="name" id="">
+            <div class="row mb-2"> 
+                <div class="col-6">
+                    <label class="form-label" for="">Nombre de la Universidad:</label>
+                    <input class="form-control" type="text" name="nombre" id="">
                 </div>
-                <div class="col-4">
-                    <label class="form-label" for="">Precio:</label>
-                    <input class="form-control" type="text" name="price" id="">
-                </div>
-                <div class="col-4">
-                    <label class="form-label" for="">Cantidad</label>
-                    <input class="form-control" type="text" name="stok" id="">
+                
+                <div class="col-6">
+                <label class="form-label" for="">Modalidad:</label>
+                <input class="form-control" type="text" name="modalidad" id="">
+                
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-4">
-                <select class="form-select" aria-label="Default select example">
-                        <option value="">Selecciona Tienda:</option>
-                        <option value="">tienda1</option>
-                        <option value="">tienda2</option>
-                        <option value="">tienda3</option>
+            <div class="row mb-2"> 
+                <div class="col-6">
+                    <label class="form-label" for="">Tipo de Universidad:</label>
+                    <select class="form-select" aria-label="Default select example">
+                            <option value="">Selecciona Municipio:</option>
+                            <option value="">tienda1</option>
+                            <option value="">tienda2</option>
+                            <option value="">tienda3</option>
                     </select>
                 </div>
-                <div class="col-4">
-                <select class="form-select" aria-label="Default select example">
-                        <option value="">Seleccione Categoria</option>
-                        <option value="">Alimentos</option>
-                        <option value="">Liquidos</option>
+                <div class="col-6">
+                    <label class="form-label" for="">Id Estado:</label>
+                    <select class="form-select" aria-label="Default select example">
+                            <option value="">Selecciona Estado:</option>
+                            <option value="">tienda1</option>
+                            <option value="">tienda2</option>
+                            <option value="">tienda3</option>
                     </select>
                 </div>
+               
+            </div>
+            <div class="row mb-2"> 
+                <div class="col-6">
+                    <label class="form-label" for="">Id Municipio:</label>
+                    <select class="form-select" aria-label="Default select example">
+                            <option value="">Selecciona Municipio:</option>
+                            <option value="">tienda1</option>
+                            <option value="">tienda2</option>
+                            <option value="">tienda3</option>
+                    </select>
+                </div>
+                
+                
+            </div>
+            
+                    <br>
+                    <br>
                         <div class="col-4">
                         <button class="btn btn-success" type="submit">Guardar</button>
-                </div>
 
             </div>
         </div>
@@ -67,9 +85,6 @@ include ('./../../layout/header.php');
 
     </div>
     <!-- Page Heading -->
-
-
-
 
 
 </div>

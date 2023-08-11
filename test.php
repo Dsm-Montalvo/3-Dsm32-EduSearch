@@ -22,4 +22,4 @@ class Home
 $h = new Home();
 
 ?>
-<!-- <a href="<?=$h->get['base_url'].'/views/temario/index.php'?>">Base Testear</a> -->
+<!--  <a href="<?=$h->get['base_url'].'/views/temario/index.php'?>">Base Testear</a>  -->

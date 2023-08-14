@@ -54,7 +54,7 @@ INNER JOIN cargos ON usuarios.Id_cargo1 =cargos.Id_Cargo
                                 <td><?php echo $resultado['Nom_Municipio']; ?></td>
                                 <td><?php echo $resultado['descripcion']; ?></td>
                                 <td class="col-4"><a href="<?=$h->get['base_url'].'/views/usuarios/edit.php?Id='?><?php echo $resultado['Id_Usuario'] ?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
-                                <a href="<?=$h->get['base_url'].'/views/usuarios/show.php'?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                <a href="<?=$h->get['base_url'].'/views/usuarios/show.php?Id='?><?php echo $resultado['Id_Usuario'] ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
                                 <a href="<?=$h->get['base_url'].'/app/models/eliminar_usuario.php?Id='?><?php echo $resultado['Id_Usuario'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
                         </tr>
                     <?php } ?>

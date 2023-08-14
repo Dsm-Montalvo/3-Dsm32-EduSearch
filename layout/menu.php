@@ -130,7 +130,7 @@
             
             <li class="nav-item">
             <a class="nav-link" href="<?=$h->get['base_url'].'/views/usuarios/index.php'?>">
-                    <i class="bi bi-map"></i>
+                    <i class="bi bi-person-circle"></i>
                     <span>usuarios</span></a>
             </li>
             <li class="nav-item">

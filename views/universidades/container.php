@@ -44,7 +44,7 @@ INNER JOIN municipios ON universidades.Id_Municipio1 = municipios.Id_Municipio
                                 <td><?php echo $resultado['Nom_Estado']?></td>
                                 <td><?php echo $resultado['Nom_Municipio']?></td>
                                 <td><a href="<?=$h->get['base_url'].'/views/universidades/edit.php?id='?><?php echo $resultado['Id_Universidad'] ?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
-                                <a href="<?=$h->get['base_url'].'/views/universidades/show.php'?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                <a href="<?=$h->get['base_url'].'/views/universidades/show.php?id='?><?php echo $resultado['Id_Universidad'] ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
                                 <a href="<?=$h->get['base_url'].'/app/models/eliminar_universidad.php?Id='?><?php echo $resultado['Id_Universidad'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>                               
                         </tr>
 

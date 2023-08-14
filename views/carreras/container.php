@@ -38,7 +38,7 @@ $sql = $conexion -> query("SELECT * FROM carrera");
 							<td><?php echo $resultado['Tipo']?></td>
                             <td><?php echo $resultado['Colegiatura']?></td>
 							<td><a href="<?=$h->get['base_url'].'/views/carreras/edit.php?Id='?><?php echo $resultado['Id_Carrera'] ?>" class="btn btn-warning" ><i class="bi bi-brush"></i></a>
-                                <a href="<?=$h->get['base_url'].'/views/carreras/show.php'?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                <a href="<?=$h->get['base_url'].'/views/carreras/show.php?Id='?><?php echo $resultado['Id_Carrera'] ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
                                 <a href="<?=$h->get['base_url'].'/app/models/eliminar_carrera.php?Id='?><?php echo $resultado['Id_Carrera'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a></td>
 						</tr>
                         <?php 

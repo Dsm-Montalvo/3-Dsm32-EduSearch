@@ -1,4 +1,3 @@
-
 <?php
 include ('./../../test.php');
 include ('./../../layout/menu.php');
@@ -10,13 +9,13 @@ $resultado = $conexion->query($sql);
 
 $row = $resultado->fetch_assoc();
 ?>
-      
+        
 
-      <div class="container-fluid">
+        <div class="container-fluid">
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Mostrar temario</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Editar temario</h6>
             <div class="dropdown no-arrow">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -33,17 +32,17 @@ $row = $resultado->fetch_assoc();
             </div>
         </div>
         <!-- Card Body -->
-        <form action="<?=$h->get['base_url'].'/views/temario/index.php'?>">
+        <form action="<?=$h->get['base_url'].'/app/models/editar_temario.php'?>" method="post">
         <div class="card-body">
         <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Temario']; ?>">
             <div class="row mb-2"> 
                 <div class="col-6">
                     <label class="form-label" for="">Nombre del Temario:</label>
-                    <input class="form-control" type="text" name="nombret" value="<?php echo $row['Nom_Temario']?>" disabled>
+                    <input class="form-control" type="text" name="nombret" value="<?php echo $row['Nom_Temario']?>">
                 </div>
                 <div class="col-6">
                     <label class="form-label" for="">Carrera:</label>
-                    <select class="form-select" name="carrerat" disabled>
+                    <select class="form-select" name="carrerat">
                             <option value="">Selecciona Carrera:</option>
                             <?php 
                                 $sql1 = "SELECT * FROM carrera WHERE Id_Carrera=".$row['Id_Carrera1'];
@@ -68,7 +67,7 @@ $row = $resultado->fetch_assoc();
                     <br>
                     <br>
                         <div class="col-4">
-                        <button class="btn btn-info" type="submit">Regresar</button>
+                        <button class="btn btn-success" type="submit">Guardar</button>
 
             </div>
         </div>
@@ -82,5 +81,3 @@ $row = $resultado->fetch_assoc();
 <?php
 include ('./../../layout/footer.php');
 ?>
-</div>
-</div>

@@ -1,23 +1,15 @@
-
 <?php
 include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 include ('./../../database/conexion.php');
-
-$sql = "SELECT * FROM apoyos WHERE Id_Apoyo=".$_REQUEST['Id'];
-$resultado = $conexion->query($sql);
-
-$row = $resultado->fetch_assoc();
 ?>
-
-
 
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Mostrar Apoyo</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Insertar temario</h6>
             <div class="dropdown no-arrow">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -34,33 +26,34 @@ $row = $resultado->fetch_assoc();
             </div>
         </div>
         <!-- Card Body -->
-        <form action="<?=$h->get['base_url'].'/views/apoyos/index.php'?>">
+        <form action="<?=$h->get['base_url'].'/app/models/insertar_temario.php'?>" method="post">
         <div class="card-body">
-        <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Apoyo']; ?>" disabled>
             <div class="row mb-2"> 
                 <div class="col-6">
-                    <label class="form-label" for="">Nombre del apoyo:</label>
-                    <input class="form-control" type="text" name="nombrea" value="<?php echo $row['Nom_Apoyo']?>" disabled>
+                    <label class="form-label" for="">Nombre del Temario:</label>
+                    <input class="form-control" type="text" name="nombret" id="">
                 </div>
-                
                 <div class="col-6">
-                <label class="form-label" for="">tipo de apoyo:</label>
-                <input class="form-control" type="text" name="tipoa" value="<?php echo $row['Tipo_Apoyo']?>" disabled>
-                
+                    <label class="form-label" for="">Carrera:</label>
+                    <select class="form-select" name="carrerat">
+                    <option selected disabled>--Carrera--</option>
+                            <?php 
+                                $sql = $conexion->query("SELECT * FROM carrera");
+                                while ($resultado = $sql->fetch_assoc()){
+                                    echo "<option value='".$resultado['Id_Carrera']."'>" .$resultado
+                                    ['Nom_Carrera']."</option>";
+                                }
+                            
+                            ?>
+                    </select>
                 </div>
             </div>
-            <div class="row mb-2"> 
-                <div class="col-6">
-                    <label class="form-label" for="">Monto del apoyo:</label>
-                    <input class="form-control" type="text" name="montoa" value="<?php echo $row['Monto_Apoyo']?>" disabled>
-                </div>
-                
-            </div>
+            
             
                     <br>
                     <br>
                         <div class="col-4">
-                        <button class="btn btn-info" type="submit">Regresar</button>
+                        <button class="btn btn-success" type="submit">Guardar</button>
 
             </div>
         </div>
@@ -70,11 +63,9 @@ $row = $resultado->fetch_assoc();
     <!-- Page Heading -->
 
 
+    </div>
+</div>
 
-    </div>
-    </div>
 <?php
 include ('./../../layout/footer.php');
 ?>
-</div>
-</div>

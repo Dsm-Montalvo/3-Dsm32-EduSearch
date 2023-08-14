@@ -1,6 +1,6 @@
 
 <?php
-include ('./../../test.php');
+include ('./../../config.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 include ('./../../database/conexion.php');

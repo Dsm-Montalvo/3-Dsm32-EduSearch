@@ -1,5 +1,5 @@
 <?php
-include ('./../../config.php');
+include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 include ('./../../database/conexion.php');
@@ -27,7 +27,7 @@ $sql = $conexion->query("SELECT * FROM carrera");
             </div>
         </div>
         <!-- Card Body -->
-        <form action="<?=$h->get['base_url'].'/app/models/insertar_carreras.php'?>" method="POST">
+        <form action="<?=$h->get['base_url'].'/app/models/Insertar_carreras.php'?>" method="POST">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">

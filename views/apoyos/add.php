@@ -1,5 +1,5 @@
 <?php
-include ('./../../config.php');
+include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 include ('./../../database/conexion.php');
@@ -26,7 +26,7 @@ include ('./../../database/conexion.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="<?=$h->get['base_url'].'/app/models/Insertar_apoyo.php'?>" method="POST">
+        <form action="<?=$h->get['base_url'].'/app/models/insertar_apoyo.php'?>" method="POST">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">

@@ -32,7 +32,7 @@ $row = $resultado->fetch_assoc();
         </div>
         
         <!-- Card Body -->
-        <form action="../../app/models/editar_usuario.php" method="post">
+        <form action="<?=$h->get['base_url'].'/app/models/editar_usuario.php'?>" method="post">
         <div class="card-body">
         <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Usuario']; ?>">
             <div class="row mb-2"> 

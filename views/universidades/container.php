@@ -11,7 +11,7 @@ INNER JOIN municipios ON universidades.Id_Municipio1 = municipios.Id_Municipio
 
 <div class="container">
         <div class="row" style="padding: 10px">
-		<h3 class="text-center">CRUD imagenes y archivo de PHP y MySQL</h3>
+		<h3 class="text-center">Sistema de Busqueda de Universidades</h3>
 	</div>
  
         <div class="d-sm-flex align-items-center justify-content-between mb-4">

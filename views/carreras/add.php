@@ -27,7 +27,7 @@ $sql = $conexion->query("SELECT * FROM carrera");
             </div>
         </div>
         <!-- Card Body -->
-        <form action="../../app/models/Insertar_carreras.php" method="POST">
+        <form action="<?=$h->get['base_url'].'/app/models/insertar_carreras.php'?>" method="POST">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">

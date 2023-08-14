@@ -9,7 +9,7 @@ INNER JOIN carrera ON temarios.Id_Carrera1 =carrera.Id_Carrera
 
 <div class="container">
         <div class="row" style="padding: 10px">
-		<h3 class="text-center">CRUD imagenes y archivo de PHP y MySQL</h3>
+		<h3 class="text-center">Sistema de Busqueda de Universidades</h3>
 	</div>
     
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -19,7 +19,7 @@ INNER JOIN carrera ON temarios.Id_Carrera1 =carrera.Id_Carrera
     </div>
     
     <div class="table-responsive-sm">
-		<table class="display table table-bordered" id="mitabla">
+		<table class="display table table-bordered" id="myTable">
                 <thead class="table">
                         <tr>
                                 <th scope="col">Id del Temario</th>

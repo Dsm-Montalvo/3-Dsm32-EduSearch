@@ -17,16 +17,17 @@
     <title>EduSearch</title>
 
     <!-- Custom fonts for this template-->
-    <link href="http://localhost/proyectogrupal/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=$h->get['base_url'].'/vendor/fontawesome-free/css/all.min.css'?>" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="http://localhost/proyectogrupal/styles/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?=$h->get['base_url'].'/styles/css/sb-admin-2.min.css'?>" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="http://localhost/proyectogrupal/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?=$h->get['base_url'].'/vendor/datatables/dataTables.bootstrap4.min.css'?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 <!-- 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,7 +88,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo $url_base;?>">
+                <a class="nav-link" href="<?=$h->get['base_url'].'/'?>">
                     <i class="bi bi-house-door-fill"></i>
                     <span>Inicio</span></a>
             </li>
@@ -126,13 +127,35 @@
                     <span>Apoyos</span></a>
             </li>
                           
+            
+            <li class="nav-item">
+            <a class="nav-link" href="<?=$h->get['base_url'].'/views/usuarios/index.php'?>">
+                    <i class="bi bi-map"></i>
+                    <span>usuarios</span></a>
+            </li>
             <li class="nav-item">
             <a class="nav-link" href="<?=$h->get['base_url'].'/views/contacto/index.php'?>">
                     <i class="bi bi-map"></i>
                     <span>Ubicaciones</span></a>
             </li>
 
-            <!-- Divider -->
+           
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+            <div class="sidebar-card d-none d-lg-flex">
+               <p>Version 2.0</p>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar --> 
+
+        <?php 
+        /*
+ <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <div class="sidebar-heading">
                 Administrador
@@ -215,15 +238,6 @@
             <!-- FIN -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-               <p>Prueba de Mensaje</p>
-            </div>
-
-        </ul>
-        <!-- End of Sidebar --> 
+        */
+        
+        ?>

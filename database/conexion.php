@@ -22,14 +22,14 @@ $conexion=new PDO("mysql:host=$servername;dbname=$database",$username,$password)
 
 <?php
  
-$servername = "localhost";
-$database = "proyecto";
-$username = "root";
-$password = "";
+$servername = "154.56.47.52";
+$database = "u196388150_SES";
+$username = "u196388150_SES";
+$password = "@0YVG5FDEk9Sr";
 
 $conexion =new mysqli($servername,$username,$password,$database);
 if (!$conexion){
     echo 'Conexion fallida';
-} 
+}  
 
 ?>

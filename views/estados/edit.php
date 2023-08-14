@@ -3,13 +3,19 @@ include ('./../../test.php');
 include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 include ('./../../database/conexion.php');
-?>
 
-<div class="container-fluid">
+$sql = "SELECT * FROM estados WHERE Id_Estado=".$_REQUEST['Id'];
+$resultado = $conexion->query($sql);
+
+$row = $resultado->fetch_assoc();
+?>
+        
+
+        <div class="container-fluid">
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Insertar temario</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Editar Estado</h6>
             <div class="dropdown no-arrow">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -26,27 +32,15 @@ include ('./../../database/conexion.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="<?=$h->get['base_url'].'/app/models/insertar_temario.php'?>" method="post">
+        <form action="<?=$h->get['base_url'].'/app/models/editar_estado.php'?>" method="post">
         <div class="card-body">
+        <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Estado']; ?>">
             <div class="row mb-2"> 
                 <div class="col-6">
-                    <label class="form-label" for="">Nombre del Temario:</label>
-                    <input class="form-control" type="text" name="nombret" id="">
+                    <label class="form-label" for="">Nombre del Estado:</label>
+                    <input class="form-control" type="text" name="nombree" value="<?php echo $row['Nom_Estado']?>">
                 </div>
-                <div class="col-6">
-                    <label class="form-label" for="">Carrera:</label>
-                    <select class="form-select" name="carrerat">
-                    <option selected disabled>--Carrera--</option>
-                            <?php 
-                                $sql = $conexion->query("SELECT * FROM carrera");
-                                while ($resultado = $sql->fetch_assoc()){
-                                    echo "<option value='".$resultado['Id_Carrera']."'>" .$resultado
-                                    ['Nom_Carrera']."</option>";
-                                }
-                            
-                            ?>
-                    </select>
-                </div>
+                
             </div>
             
             
@@ -62,10 +56,8 @@ include ('./../../database/conexion.php');
     </div>
     <!-- Page Heading -->
 
-
     </div>
-</div>
-
+    </div>      
 <?php
 include ('./../../layout/footer.php');
 ?>

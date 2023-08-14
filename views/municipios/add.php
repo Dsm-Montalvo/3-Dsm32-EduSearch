@@ -9,7 +9,7 @@ include ('./../../database/conexion.php');
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Insertar temario</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Insertar Municipio</h6>
             <div class="dropdown no-arrow">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -26,26 +26,12 @@ include ('./../../database/conexion.php');
             </div>
         </div>
         <!-- Card Body -->
-        <form action="<?=$h->get['base_url'].'/app/models/insertar_temario.php'?>" method="post">
+        <form action="<?=$h->get['base_url'].'/app/models/insertar_municipio.php'?>" method="post">
         <div class="card-body">
             <div class="row mb-2"> 
                 <div class="col-6">
-                    <label class="form-label" for="">Nombre del Temario:</label>
-                    <input class="form-control" type="text" name="nombret" id="">
-                </div>
-                <div class="col-6">
-                    <label class="form-label" for="">Carrera:</label>
-                    <select class="form-select" name="carrerat">
-                    <option selected disabled>--Carrera--</option>
-                            <?php 
-                                $sql = $conexion->query("SELECT * FROM carrera");
-                                while ($resultado = $sql->fetch_assoc()){
-                                    echo "<option value='".$resultado['Id_Carrera']."'>" .$resultado
-                                    ['Nom_Carrera']."</option>";
-                                }
-                            
-                            ?>
-                    </select>
+                    <label class="form-label" for="">Nombre del Municipio:</label>
+                    <input class="form-control" type="text" name="nombrem" id="">
                 </div>
             </div>
             

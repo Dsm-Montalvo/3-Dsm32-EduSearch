@@ -5,7 +5,7 @@ include ('./../../layout/menu.php');
 include ('./../../layout/header.php');
 include ('./../../database/conexion.php');
 
-$sql = "SELECT * FROM temarios WHERE Id_Temario=".$_REQUEST['Id'];
+$sql = "SELECT * FROM municipios WHERE Id_Municipio=".$_REQUEST['Id'];
 $resultado = $conexion->query($sql);
 
 $row = $resultado->fetch_assoc();
@@ -16,7 +16,7 @@ $row = $resultado->fetch_assoc();
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Mostrar temario</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Mostrar Muncipio</h6>
             <div class="dropdown no-arrow">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -33,34 +33,13 @@ $row = $resultado->fetch_assoc();
             </div>
         </div>
         <!-- Card Body -->
-        <form action="<?=$h->get['base_url'].'/views/temario/index.php'?>">
+        <form action="<?=$h->get['base_url'].'/views/municipios/index.php'?>">
         <div class="card-body">
-        <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Temario']; ?>">
+        <input type="Hidden" class="form-control" name="Id" value="<?php echo $row['Id_Municipio']; ?>" disable>
             <div class="row mb-2"> 
                 <div class="col-6">
-                    <label class="form-label" for="">Nombre del Temario:</label>
-                    <input class="form-control" type="text" name="nombret" value="<?php echo $row['Nom_Temario']?>" disabled>
-                </div>
-                <div class="col-6">
-                    <label class="form-label" for="">Carrera:</label>
-                    <select class="form-select" name="carrerat" disabled>
-                            <option value="">Selecciona Carrera:</option>
-                            <?php 
-                                $sql1 = "SELECT * FROM carrera WHERE Id_Carrera=".$row['Id_Carrera1'];
-                                $resultado1 = $conexion->query($sql1);
-
-                                $row1 = $resultado1->fetch_assoc();
-
-                                echo "<option selected value='".$row1['Id_Carrera']."'>".$row1['Nom_Carrera']."</option>";
-
-                                $sql2 = "SELECT * FROM carrera";
-                                $resultado2 = $conexion->query($sql2);
-                                
-                                while($Fila = $resultado2->fetch_array()){
-                                    echo "<option value='".$Fila['Id_Carrera']."'>".$Fila['Nom_Carrera']."</option>";
-                                }
-                            ?>
-                    </select>
+                    <label class="form-label" for="">Nombre del Municipio:</label>
+                    <input class="form-control" type="text" name="nombrem" value="<?php echo $row['Nom_Municipio']?>" disabled>
                 </div>
             </div>
             

@@ -133,6 +133,19 @@
                     <i class="bi bi-person-circle"></i>
                     <span>usuarios</span></a>
             </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="<?=$h->get['base_url'].'/views/estados/index.php'?>">
+                    <i class="bi bi-signpost-2-fill"></i>
+                    <span>Estados</span></a>
+            </li>
+            
+            <li class="nav-item">
+            <a class="nav-link" href="<?=$h->get['base_url'].'/views/municipios/index.php'?>">
+                    <i class="bi bi-signpost-fill"></i>
+                    <span>Municipios</span></a>
+            </li>
+
             <li class="nav-item">
             <a class="nav-link" href="<?=$h->get['base_url'].'/views/contacto/index.php'?>">
                     <i class="bi bi-map"></i>
